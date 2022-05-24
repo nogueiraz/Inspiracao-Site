@@ -144,12 +144,12 @@ body {
 /* LOGIN */
 
 .banner .container .card {
-  background-color: #e5e5e5;
+  background-color:#212124;
   height: fit-content;
   width: 400px;
   display: flex;
   flex-direction: column;
-  color: palevioletred;
+  color: white;
   align-items: center;
   border-radius: 4px;
 }
@@ -211,7 +211,7 @@ button {
 
 input {
   margin-bottom: 10px;
-  border: 2px solid #32b9cd;
+  border: 2px solid #212124;
   padding: 10px;
   text-align: center;
   border-radius: 10px;
@@ -224,8 +224,8 @@ input {
   font-weight: 600;
   font-size: 18px;
   padding: 10px 15px;
-  color: white;
-  background-color: #e6005a;
+  color: #212124;
+  background-color: white;
   width: 120px;
   align-self: center;
   margin-top: 5px;
@@ -366,4 +366,12 @@ input {
   height: 100%;
   color: #e5e5e5;
   display: none;
+}
+.img_simulador{
+  height: 500px;
+  
+}
+.div_jogador{
+  text-align: center;
+  font-size: 40px;
 }

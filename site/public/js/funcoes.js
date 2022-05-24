@@ -52,3 +52,24 @@ function fecharModal() {
     divModal.style.display = "none";
 }
 
+function descobrir() {
+
+    var gols = ipt_gols.value
+    var jogos = ipt_jogos.value
+    var media = gols / jogos
+
+
+    if (gols < 0) {
+        alert('A quantidade de gols tem que ser maior que 0')
+    } else if (jogos <= 0) {
+        alert('Você não pode ter jogado nenhum jogo')
+    } else if (gols > 100) {
+        alert('Você é uma maquina de fazer gols?')
+    } else if (media > 0.90) {
+        resultado.innerHTML = `VOCÊ É O CR7!!!!!! SIIIIII com ${media} gols por jogo`
+        img_jogador.src = 'css/cristiano-ronaldo-comemorando-gol-foto-twitter-juventus-1.jpg'
+    } else if (media>0.73&& media<0.90) {
+        resultado.innerHTML = `VOCÊ É O MESSIII !!!!!! com ${media} gols por jogo`
+        img_jogador.src = 'css/messicomemorando.jpeg'
+    }
+}
