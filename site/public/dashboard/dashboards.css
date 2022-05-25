@@ -122,7 +122,8 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;*/
-  height: 100vh;
+  height: 100%;
+  padding: 10px;
 }
 
 .regua {
@@ -243,4 +244,29 @@ body {
   background-color: white;
   margin: 5px;
   border-radius: 3px;
+}
+.telaComeco{
+  text-align: center;
+  color: white;
+}
+.btn_inicio{
+  margin-top: 30px;
+  border-radius: 5px;
+  height: 50px;
+  font-family: 'Gill Sans', 'Gill Sans MT';
+}
+.Perguntas{
+  display: none;
+  color: white;
+  padding: 50px;
+  align-items: center;
+}
+.div_btns{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+.img_dash{
+  height: 400px;
+  width: 400px;
 }
