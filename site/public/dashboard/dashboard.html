@@ -80,10 +80,10 @@
                 <h2>O que o jogador Michael fez para superar suas dificuldades?</h2>
                 <img class="img_dash" src="img dash/11112021---brasileirao-2021---flamengo-x-bahia---michael-do-flamengo-comemora-seu-gol-1637700455180_v2_4x3.jpg" alt=""> <br>
                 <div class="div_btns">
-                    <button id="opt1" onclick="certo1()">Se converteu ao Cristianismo</button>
-                    <button id="opt2" onclick="certo1()">Começou a jogar futebol</button>
-                    <button id="opt3" onclick="certo1()">Virou Programador</button>
-                    <button id="opt4" onclick="certo1()">Pediu ajuda para os pais</button>
+                    <input id="opt1" class="btn_quiz" type="button" value="Se converteu ao cristianismo">
+                    <input class="btn_quiz" type="button" value="Começou a jogar futebol">
+                    <input class="btn_quiz" type="button" value="Virou Programador">
+                    <input class="btn_quiz" type="button" value="Pediu ajuda para os pais">
                 </div>
 
             </div>
@@ -109,18 +109,16 @@
 
 <script>
     var index= 0
-    
+    var certo = true
+
   function comecoQuiz() {
       comecoPergunta.style.display='none'
       pergunta1.style.display='block'
       index++
   }
 function certo1() {
-    if (index==1) {
-        opt1.style.background='green'
-        opt2.style.background='red'
-        opt3.style.background='red'
-        opt4.style.background='red'
+    if (opt1.value==true) {
+        
     }
 
     

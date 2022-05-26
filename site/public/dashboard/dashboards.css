@@ -270,3 +270,6 @@ body {
   height: 400px;
   width: 400px;
 }
+.btn_quiz{
+  cursor: pointer;
+}
