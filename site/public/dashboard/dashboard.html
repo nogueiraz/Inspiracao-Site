@@ -10,15 +10,14 @@
 
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="dashboards.css">
-    
+
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
         href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
         rel="stylesheet">
 
-    <!-- scripts do Chart.js -->
-   >
+    
 
 </head>
 
@@ -58,44 +57,85 @@
 
         <div class="dash">
             <div class="btns-dash">
-                <h1> Quiz sobre as Ispirações</h1>
+                <h1 style="color: white;"> Quiz sobre as Ispirações</h1>
 
             </div>
-            <div>
-                <h3 class="tituloGraficos">
-                    <span id="tituloAquario">123</span>
-                    boa
-                </h3>
-            </div>
+
             <div class="telaComeco" id="comecoPergunta">
 
-                <h2>Agora vamos testar seu conhecimento, com base na leitura da história de cada jogador em nosso site: <br>
+                <h2>Agora vamos testar seu conhecimento, com base na leitura da história de cada jogador em nosso site:
+                    <br>
                     Clique em começar quiz: <br>
                     <button class="btn_inicio" onclick="comecoQuiz()">Começar Quiz</button>
                 </h2>
-                
+
             </div>
-            <div class="Perguntas" id="pergunta1" >
+            <div class="Perguntas" id="pergunta1">
                 <h1>Pergunta 1</h1>
                 <h2>O que o jogador Michael fez para superar suas dificuldades?</h2>
-                <img class="img_dash" src="img dash/11112021---brasileirao-2021---flamengo-x-bahia---michael-do-flamengo-comemora-seu-gol-1637700455180_v2_4x3.jpg" alt=""> <br>
+                <img class="img_dash"
+                    src="img dash/11112021---brasileirao-2021---flamengo-x-bahia---michael-do-flamengo-comemora-seu-gol-1637700455180_v2_4x3.jpg"
+                    alt=""> <br>
                 <div class="div_btns">
-                    <input id="opt1" class="btn_quiz" type="button" value="Se converteu ao cristianismo">
-                    <input class="btn_quiz" type="button" value="Começou a jogar futebol">
-                    <input class="btn_quiz" type="button" value="Virou Programador">
-                    <input class="btn_quiz" type="button" value="Pediu ajuda para os pais">
+                    <input onclick="certo1()" id="opt1" class="btn_quiz" type="button"
+                        value="Se converteu ao cristianismo">
+                    <input onclick="errada1()" id="opt2" class="btn_quiz" type="button" value="Começou a jogar futebol">
+                    <input onclick="errada1()" id="opt3" class="btn_quiz" type="button" value="Virou Programador">
+                    <input onclick="errada1()" id="opt4" class="btn_quiz" type="button" value="Pediu ajuda para os pais">
                 </div>
 
             </div>
-            <div class="Perguntas" id="pergunta2" >
+            <div class="Perguntas" id="pergunta2">
                 <h1>Pergunta 2</h1>
                 <h2>Lionel Messi teve um problema de crescimento por conta de:</h2>
-                <img class="img_dash" src="img dash/11112021---brasileirao-2021---flamengo-x-bahia---michael-do-flamengo-comemora-seu-gol-1637700455180_v2_4x3.jpg" alt=""> <br>
+                <img class="img_dash" src="img dash/messi-contrato-barcelona.webp" alt=""> <br>
                 <div class="div_btns">
-                    <button id="opt1" onclick="certo2()">Pais Baixos</button>
-                    <button id="opt2" onclick="certo2()">Problemas Hormonais</button>
-                    <button id="opt3" onclick="certo2()">Estresse</button>
-                    <button id="opt4" onclick="certo2()">Altismo</button>
+                    <input onclick="errada2()" id="opt5" class="btn_quiz" type="button" value="Pais Baixos">
+                    <input onclick="certo2()" id="opt6" class="btn_quiz" type="button" value="Problemas Hormonais">
+                    <input onclick="errada2()" id="opt7" class="btn_quiz" type="button" value="Estresse">
+                    <input onclick="errada2()" id="opt8" class="btn_quiz" type="button" value="Autismo">
+                </div>
+
+            </div>
+            <div class="Perguntas" id="pergunta3">
+                <h1>Pergunta 3</h1>
+                <h2>Mané era ridicularizado por:</h2>
+                <img class="img_dash" src="img dash/Sadio-Mane-Liverpool.jpg" alt=""> <br>
+                <div class="div_btns">
+                    <input onclick="certo3()" id="opt9" class="btn_quiz" type="button"
+                        value="Não ter roupas nem chuteiras apropriadas para o esporte">
+                    <input onclick="errada3()" id="opt10" class="btn_quiz" type="button"
+                        value="Não ter habilidade suficiente para jogar">
+                    <input onclick="errada3()" id="opt11" class="btn_quiz" type="button" value="Não ter um pai">
+                    <input onclick="errada3()" id="opt12" class="btn_quiz" type="button" value="Não ter um carro">
+                </div>
+
+            </div>
+            <div class="Perguntas" id="pergunta4">
+                <h1>Pergunta 4</h1>
+                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <img class="img_dash" src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg" alt=""> <br>
+                <div class="div_btns">
+                    <input onclick="errada4()" id="opt13" class="btn_quiz" type="button"
+                        value="Manchester United">
+                    <input onclick="errada4()" id="opt14" class="btn_quiz" type="button"
+                        value="Barcelona">
+                    <input onclick="certo4()" id="opt15" class="btn_quiz" type="button" value="Real Madrid">
+                    <input onclick="errada4()" id="opt16" class="btn_quiz" type="button" value="Sporting">
+                </div>
+
+            </div>
+            <div class="Perguntas" id="pergunta5">
+                <h1>Pergunta 5</h1>
+                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <img class="img_dash" src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg" alt=""> <br>
+                <div class="div_btns">
+                    <input onclick="errada4()" id="opt17" class="btn_quiz" type="button"
+                        value="Manchester United">
+                    <input onclick="errada4()" id="opt18" class="btn_quiz" type="button"
+                        value="Barcelona">
+                    <input onclick="certo4()" id="opt19" class="btn_quiz" type="button" value="Real Madrid">
+                    <input onclick="errada4()" id="opt20" class="btn_quiz" type="button" value="Sporting">
                 </div>
 
             </div>
@@ -108,22 +148,151 @@
 </html>
 
 <script>
-    var index= 0
-    var certo = true
+    var index = 0
+    var nmrPerguntas = 0
 
-  function comecoQuiz() {
-      comecoPergunta.style.display='none'
-      pergunta1.style.display='block'
-      index++
-  }
-function certo1() {
-    if (opt1.value==true) {
-        
+    function comecoQuiz() {
+        comecoPergunta.style.display = 'none'
+        pergunta1.style.display = 'block'
+        nmrPerguntas++
     }
 
-    
-    
-}
 
-    
+
+    //Questão1
+    function certo1() {
+        opt1.style.background = 'green';
+        setInterval(()=>{
+            pergunta1.style.display = 'none';
+        pergunta2.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+     
+    }
+
+    function errada1() {
+        opt1.style.background = 'green';
+        opt2.style.background = 'red';
+        opt3.style.background = 'red';
+        opt4.style.background = 'red';
+        setInterval(()=>{
+            pergunta1.style.display = 'none';
+        pergunta2.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
+
+    //Questão 2
+    function certo2() {
+        opt6.style.background = 'green';
+        setInterval(()=>{
+            pergunta2.style.display = 'none';
+        pergunta3.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+    }
+
+    function errada2() {
+        opt6.style.background = 'green';
+        opt5.style.background = 'red';
+        opt7.style.background = 'red';
+        opt8.style.background = 'red';
+        setInterval(()=>{
+            pergunta2.style.display = 'none';
+        pergunta3.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
+    //Questão 3
+    function certo3() {
+        opt9.style.background = 'green';
+        setInterval(()=>{
+            pergunta3.style.display = 'none';
+        pergunta4.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+    }
+
+    function errada3() {
+        opt9.style.background = 'green';
+        opt10.style.background = 'red';
+        opt11.style.background = 'red';
+        opt12.style.background = 'red';
+        setInterval(()=>{
+            pergunta3.style.display = 'none';
+            pergunta4.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
+
+    //Questão 4
+    function certo4() {
+        opt15.style.background = 'green';
+        setInterval(()=>{
+        pergunta4.style.display = 'none';
+        pergunta5.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+    }
+
+    function errada4() {
+        opt15.style.background = 'green';
+        opt13.style.background = 'red';
+        opt14.style.background = 'red';
+        opt16.style.background = 'red';
+        setInterval(()=>{
+            pergunta4.style.display = 'none';
+            pergunta5.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
+
+    //Questão 5
+    function certo5() {
+        opt15.style.background = 'green';
+        setInterval(()=>{
+        pergunta5.style.display = 'none';
+        pergunta6.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+    }
+
+    function errada5() {
+        opt15.style.background = 'green';
+        opt13.style.background = 'red';
+        opt14.style.background = 'red';
+        opt16.style.background = 'red';
+        setInterval(()=>{
+            pergunta5.style.display = 'none';
+            pergunta6.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
+    //Questão 6
+    function certo6() {
+        opt15.style.background = 'green';
+        setInterval(()=>{
+        pergunta6.style.display = 'none';
+        pergunta7.style.display = 'block';
+        index++
+        nmrPerguntas++
+},1000)
+    }
+
+    function errada6() {
+        opt15.style.background = 'green';
+        opt13.style.background = 'red';
+        opt14.style.background = 'red';
+        opt16.style.background = 'red';
+        setInterval(()=>{
+            pergunta6.style.display = 'none';
+            pergunta7.style.display = 'block';
+        nmrPerguntas++
+},1000)
+    }
 </script>

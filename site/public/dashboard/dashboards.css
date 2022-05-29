@@ -74,7 +74,7 @@ body {
   flex-wrap: wrap;
   align-content: stretch;
   flex-direction: column;
-  justify-content: center;
+  justify-content: center;  
   align-items: stretch;
   border-bottom: 3px solid #e6005a;
   padding: 20px;
