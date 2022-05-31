@@ -71,5 +71,8 @@ function descobrir() {
     } else if (media>0.73&& media<0.90) {
         resultado.innerHTML = `VOCÊ É O MESSIII !!!!!! com ${media} gols por jogo`
         img_jogador.src = 'css/messicomemorando.jpeg'
+    } else if (media>0.5 && media<=0.73) {
+        resultado.innerHTML = `VOCÊ É O MESSIII !!!!!! com ${media} gols por jogo`
+        img_jogador.src = 'css/messicomemorando.jpeg'
     }
 }
