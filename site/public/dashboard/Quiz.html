@@ -155,28 +155,29 @@
             </div>
             <div class="Perguntas" id="pergunta7">
                 <h1>Pergunta 7</h1>
-                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <h2>Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em
+                    alto nível, mas teve um tecnico que acreditou,quem foi?</h2>
                 <img class="img_dash"
                     src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
                     alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="errada7()" id="opt25" class="btn_quiz" type="button" value="Manchester United">
-                    <input onclick="errada7()" id="opt26" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="certo7()" id="opt27" class="btn_quiz" type="button" value="Real Madrid">
-                    <input onclick="errada7()" id="opt28" class="btn_quiz" type="button" value="Sporting">
+                    <input onclick="errada7()" id="opt25" class="btn_quiz" type="button" value="Dunga">
+                    <input onclick="errada7()" id="opt26" class="btn_quiz" type="button" value="Tite">
+                    <input onclick="certo7()" id="opt27" class="btn_quiz" type="button" value="Felipão">
+                    <input onclick="errada7()" id="opt28" class="btn_quiz" type="button" value="Rogerio Ceni">
                 </div>
 
             </div>
             <div class="Perguntas" id="pergunta8">
                 <h1>Pergunta 8</h1>
-                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <h2>Com 18 anos Cristiano Ronaldo assinou contato com um clube, qual foi?</h2>
                 <img class="img_dash"
                     src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
                     alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="errada8()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
+                    <input onclick="certo8()()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
                     <input onclick="errada8()" id="opt30" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="certo8()" id="opt31" class="btn_quiz" type="button" value="Real Madrid">
+                    <input onclick="errada()" id="opt31" class="btn_quiz" type="button" value="Real Madrid">
                     <input onclick="errada8()" id="opt32" class="btn_quiz" type="button" value="Sporting">
                 </div>
 
@@ -367,7 +368,7 @@
     }
     //Questão 7
     function certo7() {
-        opt25.style.background = 'green';
+        opt27.style.background = 'green';
         setTimeout(() => {
             pergunta7.style.display = 'none';
             pergunta8.style.display = 'block';
@@ -377,9 +378,9 @@
     }
 
     function errada7() {
-        opt25.style.background = 'green';
+        opt27.style.background = 'green';
         opt26.style.background = 'red';
-        opt27.style.background = 'red';
+        opt25.style.background = 'red';
         opt28.style.background = 'red';
         setTimeout(() => {
             pergunta7.style.display = 'none';
