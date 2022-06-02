@@ -461,7 +461,8 @@
     function resultadoQuiz() {
         revelar.innerHTML = `Sua pontuação foi de: ${pontuação} pontos`
         idUsuario = sessionStorage.ID_USUARIO
-        fetch("/tempo-real/:pontuacao", {
+        console.log(pontuação + ' - ' + idUsuario)
+        fetch("/pontuacao/buscarPontuacao", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
