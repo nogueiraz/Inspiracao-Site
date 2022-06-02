@@ -60,9 +60,13 @@ function buscarMedidasEmTempoReal(idAquario) {
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
     return database.executar(instrucaoSql);
 }
-
+function buscarPontuacao(receberPontuacao,idUsuario) {
+    var instrução=`INSERT INTO pontuacao VALUES (NULL, ${receberPontuacao}, ${idUsuario})`
+    return database.executar(instrução) 
+}
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    buscarPontuacao
 }

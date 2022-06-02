@@ -68,11 +68,14 @@ function descobrir() {
     } else if (media > 0.90) {
         resultado.innerHTML = `VOCÊ É O CR7!!!!!! SIIIIII com ${media} gols por jogo`
         img_jogador.src = 'css/cristiano-ronaldo-comemorando-gol-foto-twitter-juventus-1.jpg'
-    } else if (media>0.73&& media<0.90) {
+    } else if (media>0.73&& media<=0.90) {
         resultado.innerHTML = `VOCÊ É O MESSIII !!!!!! com ${media} gols por jogo`
         img_jogador.src = 'css/messicomemorando.jpeg'
-    } else if (media>0.5 && media<=0.73) {
-        resultado.innerHTML = `VOCÊ É O MESSIII !!!!!! com ${media} gols por jogo`
-        img_jogador.src = 'css/messicomemorando.jpeg'
-    }
+    } else if (media>=0.5 && media<=0.73) {
+        resultado.innerHTML = `VOCÊ É O HARRY KANE !!!!!! com ${media} gols por jogo`
+        img_jogador.src = 'css/GettyImages-1319694910.jpg'
+    }else if (media<0.5 ) {
+        resultado.innerHTML = `VOCÊ É O LUANNN !!!!!! com ${media} gols por jogo`
+        img_jogador.src = 'css/luan-meia-do-corinthians-comemora-gol-contra-o-sao-paulo-na-neo-quimica-arena-1620049082703_v2_4x3.jpg'
+}
 }

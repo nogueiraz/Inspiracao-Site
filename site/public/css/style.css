@@ -86,6 +86,10 @@ body {
   background-color: #e5e5e5;
   display: flex;
 }
+.titu{
+  background-color: #e5e5e5;
+  text-align: center;
+}
 
 .social .container{
   justify-content: center;

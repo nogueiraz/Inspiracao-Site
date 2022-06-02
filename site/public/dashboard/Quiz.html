@@ -157,9 +157,7 @@
                 <h1>Pergunta 7</h1>
                 <h2>Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em
                     alto nível, mas teve um tecnico que acreditou,quem foi?</h2>
-                <img class="img_dash"
-                    src="img dash/ronaldo-get62.webp"
-                    alt=""> <br>
+                <img class="img_dash" src="img dash/ronaldo-get62.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada7()" id="opt25" class="btn_quiz" type="button" value="Dunga">
                     <input onclick="errada7()" id="opt26" class="btn_quiz" type="button" value="Tite">
@@ -171,9 +169,7 @@
             <div class="Perguntas" id="pergunta8">
                 <h1>Pergunta 8</h1>
                 <h2>Com 18 anos Cristiano Ronaldo assinou contato com um clube, qual foi?</h2>
-                <img class="img_dash"
-                    src="img dash/gettyimages-85991493.webp"
-                    alt=""> <br>
+                <img class="img_dash" src="img dash/gettyimages-85991493.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="certo8()()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
                     <input onclick="errada8()" id="opt30" class="btn_quiz" type="button" value="Barcelona">
@@ -184,15 +180,15 @@
             </div>
             <div class="Perguntas" id="pergunta9">
                 <h1>Pergunta 9</h1>
-                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <h2>Thiago Silva ficou internado por conta de uma :</h2>
                 <img class="img_dash"
-                    src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
+                    src="img dash/thiago-silva-com-a-bracadeira-de-capitao-da-selecao-brasileira-durante-a-final-da-copa-america-contra-a-argentina-em-julho-1629141174704.jpg"
                     alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="errada9()" id="opt33" class="btn_quiz" type="button" value="Manchester United">
-                    <input onclick="errada9()" id="opt34" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="certo9()" id="opt35" class="btn_quiz" type="button" value="Real Madrid">
-                    <input onclick="errada9()" id="opt36" class="btn_quiz" type="button" value="Sporting">
+                    <input onclick="errada9()" id="opt33" class="btn_quiz" type="button" value="Lesão na perna">
+                    <input onclick="errada9()" id="opt34" class="btn_quiz" type="button" value="Doença no fígado">
+                    <input onclick="certo9()" id="opt35" class="btn_quiz" type="button" value="Tuberculose">
+                    <input onclick="errada9()" id="opt36" class="btn_quiz" type="button" value="Coluna machicada">
                 </div>
 
             </div>
@@ -203,11 +199,18 @@
                     src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
                     alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="errada10()" id="opt37" class="btn_quiz" type="button" value="Manchester United">
+                    <input onclick="certo10()" id="opt37" class="btn_quiz" type="button" value="Manchester United">
                     <input onclick="errada10()" id="opt38" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="certo10()" id="opt39" class="btn_quiz" type="button" value="Real Madrid">
+                    <input onclick="errada10()" id="opt39" class="btn_quiz" type="button" value="Real Madrid">
                     <input onclick="errada10()" id="opt40" class="btn_quiz" type="button" value="Sporting">
                 </div>
+
+            </div>
+            <div class="Perguntas" id="finalQuiz">
+                <h1>Resultado</h1>
+                <h2 id="revelar">Sua pontuação foi de: </h2> <br>
+                <button onclick="resultadoQuiz()">revelar</button>
+
 
             </div>
         </div>
@@ -219,7 +222,7 @@
 </html>
 
 <script>
-    var index = 0
+    var pontuação = 0
     var nmrPerguntas = 0
 
     function comecoQuiz() {
@@ -236,7 +239,7 @@
         setTimeout(() => {
             pergunta1.style.display = 'none';
             pergunta2.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
 
@@ -260,7 +263,7 @@
         setTimeout(() => {
             pergunta2.style.display = 'none';
             pergunta3.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -282,7 +285,7 @@
         setTimeout(() => {
             pergunta3.style.display = 'none';
             pergunta4.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -305,7 +308,7 @@
         setTimeout(() => {
             pergunta4.style.display = 'none';
             pergunta5.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -328,7 +331,7 @@
         setTimeout(() => {
             pergunta5.style.display = 'none';
             pergunta6.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -350,7 +353,7 @@
         setTimeout(() => {
             pergunta6.style.display = 'none';
             pergunta7.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -372,7 +375,7 @@
         setTimeout(() => {
             pergunta7.style.display = 'none';
             pergunta8.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -394,7 +397,7 @@
         setTimeout(() => {
             pergunta8.style.display = 'none';
             pergunta9.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -412,19 +415,19 @@
     }
     //Questão 9
     function certo9() {
-        opt33.style.background = 'green';
+        opt35.style.background = 'green';
         setTimeout(() => {
             pergunta9.style.display = 'none';
             pergunta10.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
 
     function errada9() {
-        opt33.style.background = 'green';
+        opt35.style.background = 'green';
         opt34.style.background = 'red';
-        opt35.style.background = 'red';
+        opt33.style.background = 'red';
         opt36.style.background = 'red';
         setTimeout(() => {
             pergunta9.style.display = 'none';
@@ -438,7 +441,7 @@
         setTimeout(() => {
             pergunta10.style.display = 'none';
             finalQuiz.style.display = 'block';
-            index++
+            pontuação += 1000
             nmrPerguntas++
         }, 1000)
     }
@@ -453,5 +456,50 @@
             finalQuiz.style.display = 'block';
             nmrPerguntas++
         }, 1000)
+    }
+
+    function resultadoQuiz() {
+        revelar.innerHTML = `Sua pontuação foi de: ${pontuação} pontos`
+        idUsuario = sessionStorage.ID_USUARIO
+        fetch("/tempo-real/:pontuacao", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+                receberPontuacao: pontuação,
+                usuarioId: idUsuario
+            })
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO entrar()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+
+
+
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar realizar o login!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
+
     }
 </script>
