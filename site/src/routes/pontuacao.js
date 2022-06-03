@@ -8,4 +8,7 @@ router.post("/buscarPontuacao", function (req, res) {
 });
 
 
+router.post("/inserirPontuacao", function (req, res) {
+    pontuacaoController.inserirPontuacao(req, res);
+});
 module.exports = router;

@@ -225,6 +225,7 @@
 </html>
 
 <script>
+            idUsuario = sessionStorage.ID_USUARIO
     var perguntas = ['O que o jogador Michael fez para superar suas dificuldades?',
         'Lionel Messi teve um problema de crescimento por conta de:', 'Mané era ridicularizado por:',
         'Qual clube CR7 fez mais gols em sua carreira?', 'Carlos Tevez com apenas 10 anos sofreu:',
@@ -242,7 +243,10 @@
         comecoPergunta.style.display = 'none'
         pergunta1.style.display = 'block'
         nmrPerguntas++
+        
+
     }
+    
 
 
 
@@ -473,7 +477,32 @@
 
     function resultadoQuiz() {
         revelar.innerHTML = `Sua pontuação foi de: ${pontuação} pontos`
-        idUsuario = sessionStorage.ID_USUARIO
+
+        const labels = [
+    'Pontuação'
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [pontuação]
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
         console.log(pontuação + ' - ' + idUsuario)
         fetch("/pontuacao/buscarPontuacao", {
             method: "POST",
@@ -515,35 +544,10 @@
 
         return false;
 
+
     }
 
-  const labels = [
-    'Pontuação',
-    'pontuação'
 
-    
-  ];
-
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [0,pontuação]
-    }]
-  };
-
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
-
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
 
 
 </script>

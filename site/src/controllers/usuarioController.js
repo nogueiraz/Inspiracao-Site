@@ -1,5 +1,5 @@
 var usuarioModel = require("../models/usuarioModel");
-
+var pontuacaoModel= require("../models/pontuacaoModel");
 var sessoes = [];
 
 function testar(req, res) {
@@ -78,8 +78,15 @@ function cadastrar(req, res) {
         // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
         usuarioModel.cadastrar(nome, email, senha)
             .then(
+
                 function (resultado) {
-                    res.json(resultado);
+                    var idUsuario = resultado.insertId;
+                    pontuacaoModel.inserirPontuacao(idUsuario).then(
+                        function(resultado){
+                            res.json(resultado);
+                        }
+                    )
+ 
                 }
             ).catch(
                 function (erro) {

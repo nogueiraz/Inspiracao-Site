@@ -19,8 +19,25 @@ function buscarPontuacao(req,res) {
         res.status(500).json(erro.sqlMessage);
     });
 }
+function inserirPontuacao(req,res) {
+    var idUsuario= req.body.usuarioId
+    console.log(JSON.stringify(req.params))
+    console.log(`Recuperando pontuacao em tempo real ${req} e ${0}`);
 
+    pontuacaoModel.inserirPontuacao(idUsuario).then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar a ultima pontuacao.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+}
 module.exports = {
-    buscarPontuacao
+    buscarPontuacao,
+    inserirPontuacao
 
 }
