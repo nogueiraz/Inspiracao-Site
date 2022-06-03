@@ -2,7 +2,9 @@
 <html lang="pt-br">
 
 <head>
-    <link rel="shortcut icon" href="css/campeonato-brasileiro-de-futebol-feminino-png-favpng-qqkpMx1mufEJt6DkddYv14kvx.jpg" type="image/x-icon">
+    <link rel="shortcut icon"
+        href="css/campeonato-brasileiro-de-futebol-feminino-png-favpng-qqkpMx1mufEJt6DkddYv14kvx.jpg"
+        type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,7 +34,7 @@
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
             </div>
 
-            
+
 
             <div class="btn-nav-white">
                 <a href="Quiz.html">
@@ -41,7 +43,7 @@
             </div>
 
             <div class="btn-nav">
-                <h3>Pontuação</h3>
+                <h3>Mural</h3>
             </div>
 
             <div class="btn-logout" onclick="limparSessao()">
@@ -54,25 +56,27 @@
 
             <div class="avisos">
                 <div class="container">
-                    <h1>Publicar um aviso</h1>
+                    <h1>Publique sua Ispiração</h1>
+                    <p>Agora chegou sua vez de contar quem é sua ispiração, nos campos abaixo você pode contar quem é
+                        sua ispiração e o porque ela é:</p>
                     <div class="div-form">
-                        <form id="form_postagem" method="post" onsubmit="return publicar()">
+                        <form id="form_postagem">
                             <label>
-                                Título:
+                                Nome da Ispiração:
                                 <br>
                                 <input name="titulo" id="titulo" maxlength="100" type="text">
                             </label>
                             <br>
                             <label>
-                                Descrição (máximo de 250 caracteres):
+                                Porque ela é sua ispiração? (máximo de 250 caracteres):
                                 <br>
                                 <textarea name="descricao" id="textarea_descricao" maxlength="250" rows="5"></textarea>
                             </label>
                             <br>
-                            <button>Enviar</button>
+                            <button onclick="publicar()">Enviar</button>
                         </form>
                     </div>
-                    <h1>Mural de Avisos</h1>
+                    <h1>Mural de ispirações:</h1>
                     <div class="div-results">
                         <div id="feed_container" class="feed-container">
                         </div>
@@ -83,19 +87,7 @@
 
 
 
-            <!-- MODAL -->
-            <!-- <div id="div_modal" class="div-modal">
-                <div id="modal_backdrop" onclick="fecharModal()" class="modal-backdrop">
-                </div>
-                <div id="modal_container" class="modal-container">
-                    <button class="btn-fechar-modal" onclick="fecharModal()">X</button>
-                </div>
-            </div> -->
-
-            <!-- AGUARDAR -->
-            <!-- <div id="div_aguardar" class="div-aguardar">
-                <img src="./assets/aguarde-pink3.gif" id="img_aguarde">
-            </div>  -->
+             
 
         </div>
     </div>
@@ -108,7 +100,6 @@
 </html>
 
 <script>
-    
     b_usuario.innerHTML = sessionStorage.NOME_USUARIO;
 
     function limparFormulario() {
@@ -119,25 +110,25 @@
         var idUsuario = sessionStorage.ID_USUARIO;
 
         var corpo = {
-            titulo: form_postagem.titulo.value,
-            descricao: form_postagem.descricao.value
+            idUsuario: idUsuario,
+            nomeIspiracao: form_postagem.titulo.value,
+            porque: form_postagem.descricao.value
         }
+        alert('resposta')
 
-        fetch(`/avisos/publicar/${idUsuario}`, {
+        fetch(`/mural/publicar/${idUsuario}`, {
             method: "post",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify(corpo)
         }).then(function (resposta) {
-
             console.log("resposta: ", resposta);
 
             if (resposta.ok) {
                 window.alert("Post realizado com sucesso pelo usuario de ID: " + idUsuario + "!");
-                window.location = "/dashboard/mural.html";
-                limparFormulario();
-                finalizarAguardar();
+                // window.location.reload(true)
+
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {
@@ -145,24 +136,24 @@
             }
         }).catch(function (resposta) {
             console.log(`#ERRO: ${resposta}`);
-            finalizarAguardar();
+
         });
 
         return false;
 
     }
 
-    function editar(idAviso) {
-        sessionStorage.ID_POSTAGEM_EDITANDO = idAviso;
-        console.log("cliquei em editar - " + idAviso);
-        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idAviso);
+    function editar(idpostIspiracao) {
+        sessionStorage.ID_POSTAGEM_EDITANDO = idpostIspiracao;
+        console.log("cliquei em editar - " + idpostIspiracao);
+        window.alert("Você será redirecionado à página de edição do aviso de id número: " + idpostIspiracao);
         window.location = "/dashboard/edicao-aviso.html"
 
     }
 
-    function deletar(idAviso) {
-        console.log("Criar função de apagar post escolhido - ID" + idAviso);
-        fetch(`/avisos/deletar/${idAviso}`, {
+    function deletar(idpostIspiracao) {
+        console.log("Criar função de apagar post escolhido - ID" + idpostIspiracao);
+        fetch(`/mural/deletar/${idpostIspiracao}`, {
             method: "DELETE",
             headers: {
                 "Content-Type": "application/json"
@@ -170,7 +161,8 @@
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem("EMAIL_USUARIO") + "!");
+                window.alert("Post deletado com sucesso pelo usuario de email: " + sessionStorage.getItem(
+                    "EMAIL_USUARIO") + "!");
                 window.location = "/dashboard/mural.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
@@ -184,13 +176,14 @@
 
     function atualizarFeed() {
         //aguardar();
-        fetch("/avisos/listar").then(function (resposta) {
+        fetch("/mural/listar").then(function (resposta) {
             if (resposta.ok) {
                 if (resposta.status == 204) {
                     var feed = document.getElementById("feed_container");
                     var mensagem = document.createElement("span");
                     mensagem.innerHTML = "Nenhum resultado encontrado."
                     feed.appendChild(mensagem);
+
                     throw "Nenhum resultado encontrado!!";
                 }
 
@@ -213,15 +206,16 @@
                         var btnDeletar = document.createElement("button");
 
 
-                        spanID.innerHTML = "ID: <b>" + publicacao.idAviso + "</b>";
-                        spanTitulo.innerHTML = "Título: <b>" + publicacao.titulo + "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
-                        divDescricao.innerHTML = "Descrição: <b>" + publicacao.descricao + "</b>";
+                        spanID.innerHTML = "ID: <b>" + publicacao.idpostIspiracao + "</b>";
+                        spanTitulo.innerHTML = "Nome da Ispiração: <b>" + publicacao.nomeIspiracao +
+                            "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.idUsuario + "</b>";
+                        divDescricao.innerHTML = "Porque: <b>" + publicacao.porque + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
 
                         divPublicacao.className = "publicacao";
-                        spanTitulo.id = "inputNumero" + publicacao.idAviso;
+                        spanTitulo.id = "inputNumero" + publicacao.idpostIspiracao;
                         spanNome.className = "publicacao-nome";
                         spanTitulo.className = "publicacao-titulo";
                         divDescricao.className = "publicacao-descricao";
@@ -229,12 +223,12 @@
                         divButtons.className = "div-buttons"
 
                         btnEditar.className = "publicacao-btn-editar"
-                        btnEditar.id = "btnEditar" + publicacao.idAviso;
-                        btnEditar.setAttribute("onclick", `editar(${publicacao.idAviso})`);
+                        btnEditar.id = "btnEditar" + publicacao.idpostIspiracao;
+                        btnEditar.setAttribute("onclick", `editar(${publicacao.idpostIspiracao})`);
 
                         btnDeletar.className = "publicacao-btn-editar"
-                        btnDeletar.id = "btnDeletar" + publicacao.idAviso;
-                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idAviso})`);
+                        btnDeletar.id = "btnDeletar" + publicacao.idpostIspiracao;
+                        btnDeletar.setAttribute("onclick", `deletar(${publicacao.idpostIspiracao})`);
 
                         divPublicacao.appendChild(spanID);
                         divPublicacao.appendChild(spanNome);
@@ -271,5 +265,4 @@
 
         return false;
     }
-
 </script>

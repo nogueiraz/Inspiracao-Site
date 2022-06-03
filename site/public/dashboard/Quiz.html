@@ -8,6 +8,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <title>Quiz</title>
 
     <script src="../js/funcoes.js"></script>
@@ -36,8 +37,8 @@
             </div>
 
             <div class="btn-nav-white">
-                <a href="Pontuacao.html">
-                    <h3>Pontuação</h3>
+                <a href="Mural.html">
+                    <h3>Mural</h3>
                 </a>
             </div>
 
@@ -75,7 +76,7 @@
             </div>
             <div class="Perguntas" id="pergunta1">
                 <h1>Pergunta 1</h1>
-                <h2>O que o jogador Michael fez para superar suas dificuldades?</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash"
                     src="img dash/11112021---brasileirao-2021---flamengo-x-bahia---michael-do-flamengo-comemora-seu-gol-1637700455180_v2_4x3.jpg"
                     alt=""> <br>
@@ -91,7 +92,7 @@
             </div>
             <div class="Perguntas" id="pergunta2">
                 <h1>Pergunta 2</h1>
-                <h2>Lionel Messi teve um problema de crescimento por conta de:</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash" src="img dash/messi-contrato-barcelona.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada2()" id="opt5" class="btn_quiz" type="button" value="Pais Baixos">
@@ -103,7 +104,7 @@
             </div>
             <div class="Perguntas" id="pergunta3">
                 <h1>Pergunta 3</h1>
-                <h2>Mané era ridicularizado por:</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash" src="img dash/Sadio-Mane-Liverpool.jpg" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="certo3()" id="opt9" class="btn_quiz" type="button"
@@ -117,7 +118,7 @@
             </div>
             <div class="Perguntas" id="pergunta4">
                 <h1>Pergunta 4</h1>
-                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash"
                     src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
                     alt=""> <br>
@@ -131,7 +132,7 @@
             </div>
             <div class="Perguntas" id="pergunta5">
                 <h1>Pergunta 5</h1>
-                <h2>Carlos Tevez com apenas 10 anos sofreu:</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash" src="img dash/carlos_tevez.jpg_1159711837.jpg" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada5()" id="opt17" class="btn_quiz" type="button" value="Acidente de carro">
@@ -143,7 +144,7 @@
             </div>
             <div class="Perguntas" id="pergunta6">
                 <h1>Pergunta 6</h1>
-                <h2>Tim Howard teve um problema médico, qual foi?</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash" src="img dash/Mark-J.-Rebilas-USA-TODAY-Sports.jpg" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada6()" id="opt21" class="btn_quiz" type="button" value="Câncer">
@@ -154,9 +155,8 @@
 
             </div>
             <div class="Perguntas" id="pergunta7">
-                <h1>Pergunta 7</h1>
-                <h2>Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em
-                    alto nível, mas teve um tecnico que acreditou,quem foi?</h2>
+                <h1 id="aparecer">Pergunta 7</h1>
+                <h2></h2>
                 <img class="img_dash" src="img dash/ronaldo-get62.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada7()" id="opt25" class="btn_quiz" type="button" value="Dunga">
@@ -168,7 +168,7 @@
             </div>
             <div class="Perguntas" id="pergunta8">
                 <h1>Pergunta 8</h1>
-                <h2>Com 18 anos Cristiano Ronaldo assinou contato com um clube, qual foi?</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash" src="img dash/gettyimages-85991493.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="certo8()()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
@@ -180,7 +180,7 @@
             </div>
             <div class="Perguntas" id="pergunta9">
                 <h1>Pergunta 9</h1>
-                <h2>Thiago Silva ficou internado por conta de uma :</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash"
                     src="img dash/thiago-silva-com-a-bracadeira-de-capitao-da-selecao-brasileira-durante-a-final-da-copa-america-contra-a-argentina-em-julho-1629141174704.jpg"
                     alt=""> <br>
@@ -194,7 +194,7 @@
             </div>
             <div class="Perguntas" id="pergunta10">
                 <h1>Pergunta 10</h1>
-                <h2>Qual clube CR7 fez mais gols em sua carreira?</h2>
+                <h2 id="aparecer"></h2>
                 <img class="img_dash"
                     src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
                     alt=""> <br>
@@ -210,6 +210,9 @@
                 <h1>Resultado</h1>
                 <h2 id="revelar">Sua pontuação foi de: </h2> <br>
                 <button onclick="resultadoQuiz()">revelar</button>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
 
 
             </div>
@@ -222,6 +225,16 @@
 </html>
 
 <script>
+    var perguntas = ['O que o jogador Michael fez para superar suas dificuldades?',
+        'Lionel Messi teve um problema de crescimento por conta de:', 'Mané era ridicularizado por:',
+        'Qual clube CR7 fez mais gols em sua carreira?', 'Carlos Tevez com apenas 10 anos sofreu:',
+        'Carlos Tevez com apenas 10 anos sofreu:','Tim Howard teve um problema médico, qual foi?',
+        'Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em alto nível, mas teve um tecnico que acreditou,quem foi?',
+        'Com 18 anos Cristiano Ronaldo assinou contato com um clube, qual foi?','Thiago Silva ficou internado por conta de uma :',
+        'Qual clube CR7 fez mais gols em sua carreira?'
+
+                    
+    ]
     var pontuação = 0
     var nmrPerguntas = 0
 
@@ -503,4 +516,34 @@
         return false;
 
     }
+
+  const labels = [
+    'Pontuação',
+    'pontuação'
+
+    
+  ];
+
+  const data = {
+    labels: labels,
+    datasets: [{
+      label: 'My First dataset',
+      backgroundColor: 'rgb(255, 99, 132)',
+      borderColor: 'rgb(255, 99, 132)',
+      data: [0,pontuação]
+    }]
+  };
+
+  const config = {
+    type: 'bar',
+    data: data,
+    options: {}
+  };
+
+  const myChart = new Chart(
+    document.getElementById('myChart'),
+    config
+  );
+
+
 </script>

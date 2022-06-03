@@ -10,7 +10,7 @@ var app = express();
 
 var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-var avisosRouter = require("./src/routes/avisos");
+var muralRouter = require("./src/routes/mural");
 var pontuacaoRouter = require("./src/routes/pontuacao");
 
 app.use(express.json());
@@ -21,7 +21,7 @@ app.use(cors());
 
 app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
-app.use("/avisos", avisosRouter);
+app.use("/mural", muralRouter);
 app.use("/pontuacao", pontuacaoRouter)
 
 app.listen(PORTA, function () {

@@ -46,7 +46,7 @@
 
             <div class="btn-nav-white">
                 <a href="./mural.html">
-                    <h3>Mural de Avisos</h3>
+                    <h3>Mural de mural</h3>
                 </a>
             </div>
 
@@ -58,7 +58,7 @@
 
         <div class="dash-right">
 
-            <div class="avisos">
+            <div class="mural">
                 <div class="container">
                     <h1>Editar um aviso</h1>
                     <div class="div-form">
@@ -103,7 +103,7 @@
     }
 
     function editar() {
-        fetch(`/avisos/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
+        fetch(`/mural/editar/${sessionStorage.getItem("ID_POSTAGEM_EDITANDO")}`, {
             method: "PUT",
             headers: {
                 "Content-Type": "application/json"

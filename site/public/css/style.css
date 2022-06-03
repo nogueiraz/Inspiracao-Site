@@ -107,12 +107,30 @@ body {
 .social p {
   text-align: center;
 }
-
-.box {
+.sobre{
+  background-color: #161618;
+  color: #e5e5e5;
+  
+}
+.sobre .container.txtSob{
+  text-align: center;
+}
+.sobre .container{
+  justify-content: center;
+}
+.redebox{
+  display: flex;
+  justify-content: center;
+}
+.Rebox {
   margin: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.Rebox img {
+  height: 100px;
+  width: 100px;
 }
 
 

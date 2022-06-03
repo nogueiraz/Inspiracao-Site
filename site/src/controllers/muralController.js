@@ -1,4 +1,4 @@
-var avisoModel = require("../models/avisoModel");
+var muralModel = require("../models/muralModel");
 
 function testar(req, res) {
     console.log("ENTRAMOS NO avisoController");
@@ -6,7 +6,7 @@ function testar(req, res) {
 }
 
 function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+    muralModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
             res.status(200).json(resultado);
         } else {
@@ -14,7 +14,7 @@ function listar(req, res) {
         }
     }).catch(function (erro) {
         console.log(erro);
-        console.log("Houve um erro ao buscar os avisos: ", erro.sqlMessage);
+        console.log("Houve um erro ao buscar os posts: ", erro.sqlMessage);
         res.status(500).json(erro.sqlMessage);
     });
 }
@@ -22,7 +22,7 @@ function listar(req, res) {
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    avisoModel.listarPorUsuario(idUsuario)
+    muralModel.listarPorUsuario(idUsuario)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -44,10 +44,10 @@ function listarPorUsuario(req, res) {
         );
 }
 
-function pesquisarDescricao(req, res) {
-    var descricao = req.params.descricao;
+function pesquisarporque(req, res) {
+    var porque = req.params.porque;
 
-    avisoModel.pesquisarDescricao(descricao)
+    muralModel.pesquisarporque(porque)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -66,18 +66,18 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var titulo = req.body.titulo;
-    var descricao = req.body.descricao;
+    var nomeIspiracao = req.body.nomeIspiracao;
+    var porque = req.body.porque;
     var idUsuario = req.params.idUsuario;
 
-    if (titulo == undefined) {
-        res.status(400).send("O título está indefinido!");
-    } else if (descricao == undefined) {
-        res.status(400).send("A descrição está indefinido!");
+    if (nomeIspiracao == undefined) {
+        res.status(400).send("O nomeIspiracao está indefinido!");
+    } else if (porque == undefined) {
+        res.status(400).send("O porque está indefinido!");
     } else if (idUsuario == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        muralModel.publicar(nomeIspiracao, porque, idUsuario)
             .then(
                 function (resultado) {
                     res.json(resultado);
@@ -94,10 +94,10 @@ function publicar(req, res) {
 }
 
 function editar(req, res) {
-    var novaDescricao = req.body.descricao;
-    var idAviso = req.params.idAviso;
+    var novaporque = req.body.porque;
+    var idpostIspiracao = req.params.idpostIspiracao;
 
-    avisoModel.editar(novaDescricao, idAviso)
+    muralModel.editar(novaporque, idpostIspiracao)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -114,9 +114,9 @@ function editar(req, res) {
 }
 
 function deletar(req, res) {
-    var idAviso = req.params.idAviso;
+    var idpostIspiracao = req.params.idpostIspiracao;
 
-    avisoModel.deletar(idAviso)
+    muralModel.deletar(idpostIspiracao)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -135,7 +135,7 @@ module.exports = {
     testar,
     listar,
     listarPorUsuario,
-    pesquisarDescricao,
+    pesquisarporque,
     publicar,
     editar,
     deletar
