@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>AcquaTec | Cadastro</title>
+    <title> Cadastro</title>
 
 
     <script src="./js/funcoes.js"></script>
@@ -114,17 +114,26 @@
         var emailVar = email_input.value;
         var senhaVar = senha_input.value;
         var confirmacaoSenhaVar = confirmacao_senha_input.value;
+        
+       
 
         if (nomeVar == "" || emailVar == "" || senhaVar == "" || confirmacaoSenhaVar == "") {
             cardErro.style.display = "block"
             mensagem_erro.innerHTML = "(Mensagem de erro para todos os campos em branco)";
 
             finalizarAguardar();
+            setInterval(sumirMensagem, 5000);
+            return false;
+            
+        }else if(senhaVar.length  <8|| confirmacaoSenhaVar.length <8){
+            cardErro.style.display = "block"
+            mensagem_erro.innerHTML = "(Mensagem de erro senha com menos de 8 caracteres)";
+
+            finalizarAguardar();
+            setInterval(sumirMensagem, 5000)
             return false;
         }
-        else {
-            setInterval(sumirMensagem, 5000)
-        }
+        
 
         // Enviando o valor da nova input
         fetch("/usuarios/cadastrar", {

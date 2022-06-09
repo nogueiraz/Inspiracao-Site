@@ -30,7 +30,7 @@ router.put("/editar/:idmural", function (req, res) {
     muralController.editar(req, res);
 });
 
-router.delete("/deletar/:idmural", function (req, res) {
+router.delete("/deletar/:idpostIspiracao", function (req, res) {
     muralController.deletar(req, res);
 });
 

@@ -114,7 +114,7 @@
             nomeIspiracao: form_postagem.titulo.value,
             porque: form_postagem.descricao.value
         }
-        alert('resposta')
+        
 
         fetch(`/mural/publicar/${idUsuario}`, {
             method: "post",
@@ -209,7 +209,7 @@
                         spanID.innerHTML = "ID: <b>" + publicacao.idpostIspiracao + "</b>";
                         spanTitulo.innerHTML = "Nome da Ispiração: <b>" + publicacao.nomeIspiracao +
                             "</b>";
-                        spanNome.innerHTML = "Autor: <b>" + publicacao.idUsuario + "</b>";
+                        spanNome.innerHTML = "Autor: <b>" + publicacao.nome + "</b>";
                         divDescricao.innerHTML = "Porque: <b>" + publicacao.porque + "</b>";
                         btnEditar.innerHTML = "Editar";
                         btnDeletar.innerHTML = "Deletar";
