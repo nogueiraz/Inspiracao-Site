@@ -30,7 +30,7 @@
 
     <div class="janela">
         <div class="header-left">
-            <h1>Fuetbol</h1>
+            <h1>Inspiration</h1>
 
             <div class="hello">
                 <h3>Olá, <span id="b_usuario">usuário</span>!</h3>
@@ -104,11 +104,11 @@
             </div>
             <div class="Perguntas" id="pergunta3">
                 <h1>Pergunta 3</h1>
-                <h2 >Mané era ridicularizado por:</h2>
+                <h2>Mané era ridicularizado por:</h2>
                 <img class="img_dash" src="img dash/Sadio-Mane-Liverpool.jpg" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="certo3()" id="opt9" class="btn_quiz" type="button"
-                        value="Não ter roupas nem chuteiras apropriadas para o esporte">
+                        value="Não ter roupas  apropriadas para o esporte">
                     <input onclick="errada3()" id="opt10" class="btn_quiz" type="button"
                         value="Não ter habilidade suficiente para jogar">
                     <input onclick="errada3()" id="opt11" class="btn_quiz" type="button" value="Não ter um pai">
@@ -156,7 +156,8 @@
             </div>
             <div class="Perguntas" id="pergunta7">
                 <h1 id="aparecer">Pergunta 7</h1>
-                <h2>Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em alto nível, mas teve um tecnico que acreditou,quem foi?</h2>
+                <h2>Ronaldo teve lesões graves no joelho e ninguém mais apostava que ele voltaria a jogar futebol em
+                    alto nível, mas teve um tecnico que acreditou,quem foi?</h2>
                 <img class="img_dash" src="img dash/ronaldo-get62.webp" alt=""> <br>
                 <div class="div_btns">
                     <input onclick="errada7()" id="opt25" class="btn_quiz" type="button" value="Dunga">
@@ -172,9 +173,9 @@
                 <h2></h2>
                 <img class="img_dash" src="img dash/gettyimages-85991493.webp" alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="certo8()()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
+                    <input onclick="certo8()" id="opt29" class="btn_quiz" type="button" value="Manchester United">
                     <input onclick="errada8()" id="opt30" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="errada()" id="opt31" class="btn_quiz" type="button" value="Real Madrid">
+                    <input onclick="errada8()" id="opt31" class="btn_quiz" type="button" value="Real Madrid">
                     <input onclick="errada8()" id="opt32" class="btn_quiz" type="button" value="Sporting">
                 </div>
 
@@ -195,22 +196,22 @@
             </div>
             <div class="Perguntas" id="pergunta10">
                 <h1>Pergunta 10</h1>
-                <h2 >Qual clube CR7 fez mais gols em sua carreira?</h2>
-                <img class="img_dash"
-                    src="img dash/cristiano-ronaldo-faz-comemoracao-calma-calma-contra-o-barcelona-em-2012-1587494648948_v2_1x1.jpg"
-                    alt=""> <br>
+                <h2>Messi aos 7 anos entrou no(a):</h2>
+                <img class="img_dash" src="img dash/Messi-Homenagem.jpg" alt=""> <br>
                 <div class="div_btns">
-                    <input onclick="certo10()" id="opt37" class="btn_quiz" type="button" value="Manchester United">
+                    <input onclick="certo10()" id="opt37" class="btn_quiz" type="button" value="Newell's Old Boys">
                     <input onclick="errada10()" id="opt38" class="btn_quiz" type="button" value="Barcelona">
-                    <input onclick="errada10()" id="opt39" class="btn_quiz" type="button" value="Real Madrid">
-                    <input onclick="errada10()" id="opt40" class="btn_quiz" type="button" value="Sporting">
+                    <input onclick="errada10()" id="opt39" class="btn_quiz" type="button" value="Psg">
+                    <input onclick="errada10()" id="opt40" class="btn_quiz" type="button" value="Argentina">
                 </div>
 
             </div>
             <div class="Perguntas" id="finalQuiz">
                 <h1>Resultado</h1>
                 <h2 id="revelar">Sua pontuação foi de: </h2> <br>
-                <button onclick="resultadoQuiz()">revelar</button>
+                <button class="btn_inicio" onclick="resultadoQuiz()">revelar</button><br><br><br>
+                <img id="metrica" style="display: none;" src="img dash/Captura de tela 2022-06-10 102636.png" alt="">
+                <br>
                 <div>
                     <canvas id="myChart"></canvas>
                 </div>
@@ -226,7 +227,7 @@
 </html>
 
 <script>
-            idUsuario = sessionStorage.ID_USUARIO
+    idUsuario = sessionStorage.ID_USUARIO
 
     var pontuação = 0
     var nmrPerguntas = 0
@@ -235,10 +236,10 @@
         comecoPergunta.style.display = 'none'
         pergunta1.style.display = 'block'
         nmrPerguntas++
-        
+
 
     }
-    
+
 
 
 
@@ -468,32 +469,33 @@
     }
 
     function resultadoQuiz() {
-        revelar.innerHTML = `Sua pontuação foi de: ${pontuação} pontos`
+        revelar.innerHTML = `Sua pontuação foi de: ${pontuação} pontos`;
+        metrica.style.display = "block"
 
         const labels = [
-    'Pontuação'
-  ];
+            'Pontuação'
+        ];
 
-  const data = {
-    labels: labels,
-    datasets: [{
-      label: 'My First dataset',
-      backgroundColor: 'rgb(255, 99, 132)',
-      borderColor: 'rgb(255, 99, 132)',
-      data: [pontuação]
-    }]
-  };
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Última Pontuação',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: [pontuação]
+            }]
+        };
 
-  const config = {
-    type: 'bar',
-    data: data,
-    options: {}
-  };
+        const config = {
+            type: 'bar',
+            data: data,
+            options: {}
+        };
 
-  const myChart = new Chart(
-    document.getElementById('myChart'),
-    config
-  );
+        const myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
 
         console.log(pontuação + ' - ' + idUsuario)
         fetch("/pontuacao/buscarPontuacao", {
@@ -538,8 +540,4 @@
 
 
     }
-
-
-
-
 </script>

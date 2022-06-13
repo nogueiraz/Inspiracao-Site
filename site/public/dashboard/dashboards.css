@@ -110,7 +110,7 @@ body {
 }
 
 .dash {
-  width: 75%;
+  width: 73%;
   position: relative;
   top: 0;
   left: 25%;
@@ -260,6 +260,7 @@ body {
   color: white;
   padding: 50px;
   align-items: center;
+
 }
 .div_btns{
   display: flex;

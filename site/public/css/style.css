@@ -4,7 +4,7 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Barlow', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: black;
+  background-color: #161618;
 }
 
 .container {
@@ -13,9 +13,7 @@ body {
   display: flex;
 }
 
-.header {
-  border-bottom: 3px solid #ffffff;
-}
+
 
 .header .container {
   justify-content: space-between;
@@ -52,13 +50,13 @@ body {
 .banner {
   height: fit-content;
   padding: 40px 0;
-  color: white;
-  background-image: url("3KVADPPAUJHUDAF6VDW5GJFYVY.jpg");
+  background-image: url("cr7Xmessi.jpg");
   background-size: cover;
+    
 }
 
 .banner .container {
-  height: 400px;
+  height: 500px;
   font-size: 36px;
   justify-content: center;
   align-items: center;
@@ -74,6 +72,7 @@ body {
   padding: 0;
   width: 280px;
   font-size: 36px;
+  color: white; 
 }
 
 .banner .container span {
@@ -146,6 +145,13 @@ body {
   height: 420px;
   width: 400px;
   padding: 30px;
+  
+
+  
+}
+.box:hover, .box:focus{
+  animation: pulse 1s;
+  box-shadow: 0 0 0 2em rgba(#fff,0)
 }
 
 
